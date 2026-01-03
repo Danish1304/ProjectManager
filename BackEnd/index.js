@@ -21,16 +21,6 @@ mongoose.connection.on('error', err => {
   console.error("MongoDB Runtime Error:", err);
 });
 
-// // --- NEW: CREATE A PROJECT ROUTE ---
-// app.post('/api/projects', async (req, res) => {
-//     try {
-//         const newProject = new Project(req.body); // Get data from the user
-//         const savedProject = await newProject.save(); // Save it to MongoDB
-//         res.status(201).json(savedProject); // Send back the result
-//     } catch (err) {
-//         res.status(400).json({ error: err.message });
-//     }
-// });
 
 
 app.post('/api/projects', async (req, res) => {

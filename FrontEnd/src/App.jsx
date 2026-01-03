@@ -4,57 +4,6 @@ import axios from 'axios';
 import Details from './details'; // Import your Details.jsx file
 import './App.css';
 
-// // --- 1. THE DASHBOARD COMPONENT ---
-// // (This holds the search bar, the form, and the list)
-// function Dashboard({ projects, fetchProjects, title, setTitle, searchTerm, setSearchTerm, toggleComplete, deleteProject }) {
-//   const filteredProjects = projects.filter(project => 
-//     project.title.toLowerCase().includes(searchTerm.toLowerCase())
-//   );
-
-//   return (
-//     <div className="App">
-//       <h1>Project Manager</h1>
-      
-//       <div style={{ marginBottom: '20px' }}>
-//         <input 
-//           type="text" 
-//           placeholder="Search projects..." 
-//           className="search-input"
-//           value={searchTerm} 
-//           onChange={(e) => setSearchTerm(e.target.value)}
-//         />
-//       </div>
-
-//       <form className="input-group" onSubmit={(e) => {
-//           e.preventDefault();
-//           const addProject = async () => {
-//             if (!title) return;
-//             await axios.post('http://localhost:5000/api/projects', { title });
-//             setTitle('');
-//             fetchProjects();
-//           };
-//           addProject();
-//       }}>
-//         <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="New project title..." />
-//         <button type="submit" className="add-btn">Add</button>
-//       </form>
-
-//       <ul>
-//         {filteredProjects.map(project => (
-//           <li key={project._id}>
-//             {/* NEW: Title is now a Link to the Details page */}
-//             <Link to={`/project/${project._id}`} className="project-text" style={{ textDecoration: 'none' }}>
-//               {project.status === 'Completed' ? '✅ ' : '⭕ '}
-//               {project.title}
-//             </Link>
-            
-//             <button className="delete-btn" onClick={() => deleteProject(project._id)}>Delete</button>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
 
 
 function Dashboard({ projects, fetchProjects, deleteProject, toggleComplete })  {
